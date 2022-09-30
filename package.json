@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./build && tsc",
-    "dev": "nodemon",
+    "dev": "cross-env NODE_ENV=develop nodemon",
     "lint": "eslint . --ext .ts",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "start": "npm run build && node build/index.js",
-    "migration": "npm run build && node build/migrator/index.js",
+    "start": "cross-env NODE_ENV=production npm run build && node build/index.js",
+    "migration:dev": "cross-env NODE_ENV=develop npm run build && node build/migrator/index.js",
+    "migration:prod": "cross-env NODE_ENV=production npm run build && node build/migrator/index.js",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "husky": {
@@ -24,6 +25,7 @@
     "@types/pg": "^8.6.5",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.2",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
@@ -38,7 +40,6 @@
     "ethers": "^5.7.1",
     "pg": "^8.8.0",
     "reflect-metadata": "^0.1.13",
-    "ts-dedent": "^2.2.0",
-    "winston": "^3.8.2"
+    "ts-dedent": "^2.2.0"
   }
 }
