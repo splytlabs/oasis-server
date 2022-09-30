@@ -5,16 +5,16 @@ services:
     container_name: postgres_container
     image: postgres:latest
     environment:
-      POSTGRES_USER: ${DB_USER:-postgres}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-oasis}
-      POSTGRES_DB: ${DB_NAME:-db}
+      POSTGRES_USER: ${DB_USER:-admin}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-admin1234}
+      POSTGRES_DB: ${DB_NAME:-postgres}
       PGDATA: /data/postgres
     volumes:
       - postgres:/data/postgres
       - ./db:/docker-entrypoint-initdb.d/
     ports:
-      - '${DB_PORT:-5432}:5432'
+      - '${DB_PORT:-6519}:5432'
     restart: unless-stopped
-
+    
 volumes:
   postgres:

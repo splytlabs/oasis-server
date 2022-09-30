@@ -51,8 +51,8 @@ function cast<T extends keyof CastType>(
 export const config = {
   dbHost: cast('DB_HOST', 'string', 'localhost'),
   dbPort: cast('DB_PORT', 'number', 6519),
-  dbUser: cast('DB_NAME', 'string', 'admin1234'),
-  dbPassword: cast('DB_PASSWORD', 'string', 'admin'),
+  dbUser: cast('DB_NAME', 'string', 'admin'),
+  dbPassword: cast('DB_PASSWORD', 'string', 'admin1234'),
   databaseName: cast('DB_NAME', 'string', 'postgres'),
   dbPoolCount: cast('DB_POOL_COUNT', 'number', 5),
   klayRpcUrl: cast(
