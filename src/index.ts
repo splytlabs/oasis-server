@@ -7,8 +7,7 @@ import { Pool } from 'pg';
 import { DbService } from './services/db';
 import { QueryBuilder } from './services/query';
 import { config } from './config';
-
-console.log('Server start');
+import express, { Express, Request, Response } from 'express';
 
 const contractRawData = readFileSync('./src/market.json').toString();
 
@@ -121,3 +120,14 @@ contract.on(
     await db.run(query);
   },
 );
+
+const app: Express = express();
+const port = process.env.PORT;
+
+app.get('/check', (req: Request, res: Response) => {
+  res.json('Health check Ok');
+});
+
+app.listen(port, () => {
+  console.log(`⚡️[server]: Server is running at https://localhost:${port}`);
+});
