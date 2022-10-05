@@ -8,9 +8,9 @@
     "dev": "cross-env NODE_ENV=develop nodemon",
     "lint": "eslint . --ext .ts",
     "format": "prettier --config .prettierrc 'src/**/*.ts' --write",
-    "start": "cross-env NODE_ENV=production npm run build && node build/index.js",
-    "migration:dev": "cross-env NODE_ENV=develop npm run build && node build/migrator/index.js",
-    "migration:prod": "cross-env NODE_ENV=production npm run build && node build/migrator/index.js",
+    "start": "npm run build && node build/index.js",
+    "migration:dev": "npm run build && cross-env NODE_ENV=develop node build/migrator/index.js",
+    "migration:prod": "npm run build && cross-env NODE_ENV=production node build/migrator/index.js",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "husky": {

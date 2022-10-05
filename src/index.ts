@@ -8,6 +8,8 @@ import { DbService } from './services/db';
 import { QueryBuilder } from './services/query';
 import { config } from './config';
 
+console.log('Server start');
+
 const contractRawData = readFileSync('./src/market.json').toString();
 
 const abi = JSON.parse(contractRawData).abi;
