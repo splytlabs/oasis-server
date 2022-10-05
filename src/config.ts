@@ -6,7 +6,7 @@ if (process.env.NODE_ENV === 'production') {
 } else if (process.env.NODE_ENV === 'develop') {
   dotenv.config({ path: path.join(__dirname, '../.env') });
 } else {
-  throw new Error('process.env.NODE_ENV를 설정하지 않았습니다!');
+  // throw new Error('process.env.NODE_ENV를 설정하지 않았습니다!');
 }
 
 type CastType = {
