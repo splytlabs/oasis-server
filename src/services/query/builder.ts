@@ -62,6 +62,8 @@ export class QueryBuilder {
             ${collectionTable}.*,
             l.payment,
             l.payment_option,
+            l.id as lend_id,
+            l.owner,
             l.payment_token_address,
             l.valid_until,
             l.min_rent_duration,
