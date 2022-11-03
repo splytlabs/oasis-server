@@ -14,7 +14,7 @@ const abi = JSON.parse(contractRawData).abi;
 
 const provider = new JsonRpcProvider(config.klayRpcUrl);
 
-const MARKET_CONTRACT_ADDRESS = '0x0997d2d5cE4bA4036B396fd1b2cceFbF4BeA8Ec2';
+const MARKET_CONTRACT_ADDRESS = '0x7F69277Cf5B335da47CcdDc760772BeAcE41110E';
 const contract = new Contract(MARKET_CONTRACT_ADDRESS, abi, provider);
 
 const pool = new Pool({
@@ -68,7 +68,7 @@ contract.on(
       collection_id: 1,
       txStatus: 'Confirmed',
       txHash: event.transactionHash,
-      validUntil: BigInt(1666598400),
+      validUntil: BigInt(1866598400),
     };
 
     const query = QueryBuilder.buildInsertQuery('lends', args);
